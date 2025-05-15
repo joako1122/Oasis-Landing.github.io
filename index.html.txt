@@ -52,8 +52,9 @@
     <h1>Welcome to OASIS Web Page Design</h1>
     <p>This is a sample page created using Python.</p>
     <div id='timer'>25:00</div>
+    <div>Hacé click acá abajo 👇🏻 y reclamá con tu carga la bonificación de +1000 por tu primera RECARGA 🎁<br>Monto mínimo de carga: $1000 | Monto mínimo de retiro: $5000</div>
     <div id='promo'>Promoción válida solo en los próximos minutos, APRESURATE</div>
-    <a href='https://wa.me/yourphonenumber' class='whatsapp-button'>Contact us on WhatsApp</a>
+    <a href='https://wa.me/2236951623' class='whatsapp-button'>Contact us on WhatsApp</a>
 
     <div id='recommendations'>
         <h2>What We Do</h2>
@@ -80,7 +81,7 @@
                 setTimeout(updateTimer, 1000);
             } else {
                 timerElement.textContent = '00:00';
-                document.getElementById('promo').textContent = 'La promoción ha terminado.';
+                document.getElementById('promo').textContent = 'La promoción ha acabado😔.';
             }
         }
 
