@@ -1,39 +1,91 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba tu suerte</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vincula el archivo CSS -->
+    <title>OASIS Web Page Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f3ff; /* Light blue */
+            color: #4b0082; /* Violet */
+            text-align: center;
+        }
+        h1 {
+            color: #8a2be2; /* Bright violet */
+        }
+        #timer {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        #promo {
+            font-size: 1.2em;
+            color: #ff1493; /* Pink for urgency */
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        #recommendations {
+            background-color: #e6e6fa; /* Light violet */
+            color: #191970; /* Dark blue */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+        #recommendations h2 {
+            color: #4b0082; /* Violet */
+        }
+        #recommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #recommendations li {
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <h1>Welcome to OASIS Web Page Design</h1>
+    <p>This is a sample page created using Python.</p>
+    <div id='timer'>25:00</div>
+    <div>Hacé click acá abajo 👇🏻 y reclamá con tu carga la bonificación de +1000 por tu primera RECARGA 🎁<br>Monto mínimo de carga: $1000 | Monto mínimo de retiro: $5000</div>
+    <div id='promo'>Promoción válida solo en los próximos minutos, APRESURATE</div>
+    <a href='https://wa.me/2236951623' class='whatsapp-button'>Contact us on WhatsApp</a>
 
-    <h1>¿Qué esperas para probar tu suerte?</h1>
-    
-    <p class="sub-message">RECIBI EL DOBLE CON TU PRIMERA RECARGA</p>
-    
-    <div class="timer" id="countdown">10:00</div>
-    
-    <a href="https://wa.me/2236951623" class="button" target="_blank">HAZ CLICK ACA</a>
+    <div id='recommendations'>
+        <h2>What We Do</h2>
+        <ul>
+            <li>Web Design: Creating stunning and functional websites.</li>
+            <li>SEO Optimization: Enhancing your site's visibility on search engines.</li>
+            <li>User Experience: Improving the interaction between your site and its users.</li>
+            <li>Content Management: Managing and updating your website's content efficiently.</li>
+        </ul>
+    </div>
 
     <script>
-        // Temporizador de 10 minutos
-        let time = 600; // 10 minutos en segundos
-        const countdownElement = document.getElementById('countdown');
+        let timeLeft = 25 * 60; // 25 minutes in seconds
+        const timerElement = document.getElementById('timer');
 
         function updateTimer() {
-            const minutes = Math.floor(time / 60);
-            const seconds = time % 60;
-            countdownElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            time--;
-            if (time < 0) {
-                clearInterval(timerInterval);
-                countdownElement.textContent = "¡Tiempo terminado!";
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                timerElement.textContent = '00:00';
+                document.getElementById('promo').textContent = 'La promoción ha acabado😔.';
             }
         }
 
-        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();
     </script>
-
 </body>
 </html>
