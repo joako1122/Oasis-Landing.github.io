@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba tu suerte</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, violet, darkred, pink);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 0;
+        }
+
+        .sub-message {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .timer {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #FFD700; /* Color dorado */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .button {
+            background-color: #25D366; /* Color verde WhatsApp */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¿Qué esperas para probar tu suerte?</h1>
+    
+    <p class="sub-message">RECIBI EL DOBLE CON TU PRIMERA RECARGA</p>
+    
+    <div class="timer" id="countdown">10:00</div>
+    
+    <a href="https://wa.me/2236951623" class="button" target="_blank">HAZ CLICK ACA</a>
+
+    <script>
+        // Temporizador de 10 minutos
+        let time = 600; // 10 minutos en segundos
+        const countdownElement = document.getElementById('countdown');
+
+        function updateTimer() {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            countdownElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            time--;
+            if (time < 0) {
+                clearInterval(timerInterval);
+                countdownElement.textContent = "¡Tiempo terminado!";
+            }
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
+    </script>
+
+</body>
+</html>
