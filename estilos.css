@@ -80,5 +80,5 @@ footer {
     min-height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.85; /* Ajusta si querés oscurecer más para que resalten los textos */
+    opacity: 0.85; /
 }
