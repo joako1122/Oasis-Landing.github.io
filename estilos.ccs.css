@@ -7,19 +7,6 @@
     object-fit: cover;
     z-index: -1;
 }
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('fondo.jpg'); /* Cambia esto al nombre de tu imagen */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-    color: white;
 
 body {
     margin: 0;
