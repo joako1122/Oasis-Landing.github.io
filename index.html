@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,11 +17,11 @@
 <body>
     <!-- Verificación de edad -->
     <div id="age-modal" class="age-verification">
-      <div class="age-box">
-        <p>🔞 ¿Eres mayor de edad?</p>
-        <button onclick="allowAccess()">SI</button>
-        <button onclick="denyAccess()">NO</button>
-      </div>
+        <div class="age-box">
+            <p>🔞 ¿Eres mayor de edad?</p>
+            <button onclick="allowAccess()">SI</button>
+            <button onclick="denyAccess()">NO</button>
+        </div>
     </div>
 
     <audio autoplay loop>
@@ -33,7 +32,14 @@
     <div class="content">
         <h1>¿Qué esperas para probar tu suerte?</h1>
         <div class="clover">🍀</div>
-        <a class="whatsapp-button" href="https://wa.me/2236735346" target="_blank">Contactar WhatsApp!</a>
+        <a class="whatsapp-button" 
+           href="https://wa.me/2236735346?text=QUIERO%20UN%20USUARIO%20PORFAVOR" 
+           target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+                 alt="WhatsApp" 
+                 style="width:20px; vertical-align:middle; margin-right:8px;">
+            CLICK PARA HABLAR AL WHATSAPP
+        </a>
     </div>
 
     <footer>
@@ -41,14 +47,14 @@
     </footer>
 
     <script>
-      function allowAccess() {
-        document.getElementById("age-modal").style.display = "none";
-      }
+        function allowAccess() {
+            document.getElementById("age-modal").style.display = "none";
+        }
 
-      function denyAccess() {
-        alert("Debes ser mayor de edad para acceder.");
-        window.location.href = "https://www.google.com";
-      }
+        function denyAccess() {
+            alert("Debes ser mayor de edad para acceder.");
+            window.location.href = "https://www.google.com";
+        }
     </script>
 </body>
 </html>
